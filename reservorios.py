@@ -14,8 +14,7 @@ df = pd.read_csv(csv_file_path)
 #st.write("Columnas después de limpiar:", df.columns.tolist())
 
 
-logo = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/OLYMPIC.jpeg
-"
+logo = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/OLYMPIC.jpeg"
 img = PIL.Image.open(logo)
 st.sidebar.image(img)
 # Secciones para la barra lateral con botones de radio
