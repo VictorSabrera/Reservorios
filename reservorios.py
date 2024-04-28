@@ -4,6 +4,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
+import requests
 
 # La ruta del archivo CSV en tu máquina local
 csv_file_path = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/lote_vii.csv"
