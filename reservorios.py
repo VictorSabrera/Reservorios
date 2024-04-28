@@ -20,6 +20,8 @@ logo_url = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/OLY
 # Send a GET request to the image URL
 response = requests.get(logo_url)
 from PIL import Image
+from io import BytesIO
+import requests
 # Check if the request was successful
 if response.status_code == 200:
     # Open the image using BytesIO, which converts the response content into a file-like object
