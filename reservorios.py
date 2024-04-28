@@ -14,9 +14,19 @@ df = pd.read_csv(csv_file_path)
 #st.write("Columnas después de limpiar:", df.columns.tolist())
 
 
-logo = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/OLYMPIC.jpeg"
-img = PIL.Image.open(logo)
-st.sidebar.image(img)
+logo_url = "https://raw.githubusercontent.com/VictorSabrera/Reservorios/main/OLYMPIC.jpeg"
+
+# Send a GET request to the image URL
+response = requests.get(logo_url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Open the image using BytesIO, which converts the response content into a file-like object
+    img = Image.open(BytesIO(response.content))
+    # Display the image in the Streamlit sidebar
+    st.sidebar.image(img, use_column_width=True)
+else:
+    st.error("Failed to retrieve the image.")
 # Secciones para la barra lateral con botones de radio
 section = st.sidebar.radio("Seleccione la sección", 
                            ('Reservas diciembre 2023', 'Lote XIII - Sección A', 'Lote XIII - Sección B', 'Lote VII'))
